@@ -7,9 +7,9 @@ import (
 
 func TestFormatAllValues(t *testing.T) {
 	cases := []struct {
-		name   string
-		input  []string
-		want   string
+		name  string
+		input []string
+		want  string
 	}{
 		{"empty slice", []string{}, "[]"},
 		{"nil slice", nil, "[]"},
