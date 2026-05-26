@@ -1,6 +1,6 @@
 module github.com/caian-org/degg
 
-go 1.23.3
+go 1.26.2
 
 require (
 	github.com/urfave/cli/v2 v2.27.6
