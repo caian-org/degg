@@ -38,3 +38,25 @@ release-check:
 
 release-snapshot:
     @goreleaser release --snapshot --clean
+
+# run the test suite with the race detector
+test-race:
+    @echo "Running tests with race detector (excluding examples)..."
+    @go test -race -v $(go list ./... | grep -v /examples/)
+
+# coverage profile + per-function totals
+cover:
+    @go test -coverprofile=coverage.out $(go list ./... | grep -v /examples/)
+    @go tool cover -func=coverage.out | tail -20
+
+# go vet (CI also runs golangci-lint)
+lint:
+    @go vet $(go list ./... | grep -v /examples/)
+
+# go mod tidy
+tidy:
+    @go mod tidy
+
+# remove build outputs
+clean:
+    @rm -rf bin coverage.out
