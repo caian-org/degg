@@ -2,17 +2,19 @@ package cli
 
 import (
 	// standard
+	"context"
+	"net/mail"
 	"os"
 
 	// 3rd-party
-	"github.com/urfave/cli/v2"
+	"github.com/urfave/cli/v3"
 )
 
 type (
 	CLIActionCallback func(input string, output string) error
 
 	CLI struct {
-		app *cli.App
+		cmd *cli.Command
 	}
 )
 
@@ -22,8 +24,8 @@ const (
 )
 
 var (
-	authors = []*cli.Author{
-		{Name: "Caian Ertl", Email: "hi@caian.org"},
+	authors = []any{
+		&mail.Address{Name: "Caian Ertl", Address: "hi@caian.org"},
 	}
 
 	inputFlag = &cli.StringFlag{
@@ -42,25 +44,28 @@ var (
 )
 
 func New(callback CLIActionCallback) *CLI {
-	app := &cli.App{
-		Name:     "degg",
-		Usage:    "Dumb Enum Generator for Go",
-		Version:  programVersion,
-		Compiled: programCompiledAt,
-		Authors:  authors,
-		Flags:    []cli.Flag{inputFlag, outputFlag},
+	cmd := &cli.Command{
+		Name:    "degg",
+		Usage:   "Dumb Enum Generator for Go",
+		Version: programVersion,
+		Authors: authors,
+		Flags:   []cli.Flag{inputFlag, outputFlag},
 
-		Action: func(ctx *cli.Context) error {
+		Metadata: map[string]any{
+			"compiled": programCompiledAt,
+		},
+
+		Action: func(ctx context.Context, cmd *cli.Command) error {
 			return callback(
-				ctx.String(flagInputFile),
-				ctx.String(flagOutputFile),
+				cmd.String(flagInputFile),
+				cmd.String(flagOutputFile),
 			)
 		},
 	}
 
-	return &CLI{app}
+	return &CLI{cmd}
 }
 
 func (c *CLI) Act() error {
-	return c.app.Run(os.Args)
+	return c.cmd.Run(context.Background(), os.Args)
 }
