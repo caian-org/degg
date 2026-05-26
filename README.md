@@ -1,4 +1,20 @@
-# degg - Dumb Enum Generator for Go
+[![CI][ci-shield]][ci-url]
+[![Release][rel-shield]][rel-url]
+[![GitHub tag][tag-shield]][tag-url]
+
+# `degg`
+
+> dumb enum generator for Go
+
+`degg` reads YAML or JSON enum declarations and generates formatted Go enum
+code with helper methods.
+
+[ci-shield]: https://img.shields.io/github/actions/workflow/status/caian-org/degg/ci.yml?label=ci&logo=github&style=flat-square
+[ci-url]: https://github.com/caian-org/degg/actions/workflows/ci.yml
+[rel-shield]: https://img.shields.io/github/actions/workflow/status/caian-org/degg/release.yml?label=release&logo=github&style=flat-square
+[rel-url]: https://github.com/caian-org/degg/actions/workflows/release.yml
+[tag-shield]: https://img.shields.io/github/tag/caian-org/degg.svg?logo=git&logoColor=FFF&style=flat-square
+[tag-url]: https://github.com/caian-org/degg/releases
 
 **Table of Contents**
 - [Installation](#installation)
@@ -252,4 +268,14 @@ just test
 
 ## License
 
-This project is licensed under the [CC0-1.0 License](LICENSE).
+To the extent possible under law, [Caian Ertl][me] has waived __all copyright
+and related or neighboring rights to this work__. In the spirit of _freedom of
+information_, I encourage you to fork, modify, change, share, or do whatever
+you like with this project! [`^C ^V`][kopimi]
+
+[![License][cc-shield]][cc-url]
+
+[me]: https://github.com/upsetbit
+[cc-shield]: https://forthebadge.com/images/badges/cc-0.svg
+[cc-url]: http://creativecommons.org/publicdomain/zero/1.0
+[kopimi]: https://kopimi.com
