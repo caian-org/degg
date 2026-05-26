@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_notes": {
+    "purpose": "Claude Code project settings for degg. Domain guidance lives in .codex/skills and specialist subagents live in .claude/agents.",
+    "todo": [
+      "Consider SessionStart summaries for generator template and release workflow changes."
+    ]
+  },
+  "hooks": {}
+}

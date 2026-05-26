@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/upsetbit/degg/internal/declaration"
-	"github.com/upsetbit/degg/internal/generator"
+	"github.com/caian-org/degg/internal/declaration"
+	"github.com/caian-org/degg/internal/generator"
 )
 
 func assertContains(t *testing.T, s, substr string) {

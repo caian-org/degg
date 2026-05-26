@@ -1,0 +1,4 @@
+interface:
+  display_name: "Degg Generator"
+  short_description: "Declaration, validation, template, and generated-code guidance"
+  default_prompt: "Use $degg-generator when changing declaration parsing, validation, templates, examples, or generated Go output."

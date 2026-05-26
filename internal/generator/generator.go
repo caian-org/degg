@@ -3,7 +3,7 @@ package generator
 import (
 	"fmt"
 
-	"github.com/upsetbit/degg/internal/declaration"
+	"github.com/caian-org/degg/internal/declaration"
 )
 
 type (

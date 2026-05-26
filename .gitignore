@@ -24,6 +24,15 @@
 # Go workspace file
 go.work
 
+# Local environment
+.env
+.env.*
+!.env.model
+
+# Local tool and release output
+.devbox/
+dist/
+
 ### Linux ###
 *~
 

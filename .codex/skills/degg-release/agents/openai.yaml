@@ -1,0 +1,4 @@
+interface:
+  display_name: "Degg Release"
+  short_description: "GoReleaser, GitHub Actions, Devbox, and version metadata guidance"
+  default_prompt: "Use $degg-release when changing release, workflow, Devbox, or CLI metadata behavior."

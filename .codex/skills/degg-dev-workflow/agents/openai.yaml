@@ -1,0 +1,4 @@
+interface:
+  display_name: "Degg Dev Workflow"
+  short_description: "Local workflow, commands, and validation guidance for degg"
+  default_prompt: "Use $degg-dev-workflow when orienting in the degg repository or choosing validation commands."

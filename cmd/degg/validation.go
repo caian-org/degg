@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	// internal
-	"github.com/upsetbit/degg/internal/declaration"
+	"github.com/caian-org/degg/internal/declaration"
 )
 
 func lowercaseExt(p string) string {

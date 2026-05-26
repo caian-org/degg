@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/upsetbit/degg/internal/declaration"
+	"github.com/caian-org/degg/internal/declaration"
 )
 
 type (

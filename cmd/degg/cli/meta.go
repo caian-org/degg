@@ -7,23 +7,25 @@ import (
 )
 
 var (
-	programTag = "0.0.1"
+	ProgramVersion = "0.0.0-dev"
 
 	// compile-time
 	ProgramCommitSHA = ""
 	ProgramBuildTime = ""
 
 	// run-time
-	programVersion    = parseVersionOrDie(programTag, ProgramCommitSHA)
+	programVersion    = parseVersionOrDie(ProgramVersion, ProgramCommitSHA)
 	programCompiledAt = parseCompiledAtOrDie(ProgramBuildTime)
 )
 
 func parseCompiledAtOrDie(ts string) time.Time {
-	if dt, err := time.Parse("2006-01-02T15:04:05", ts); err != nil {
-		panic(err)
-	} else {
-		return dt
+	for _, layout := range []string{time.RFC3339, "2006-01-02T15:04:05"} {
+		if dt, err := time.Parse(layout, ts); err == nil {
+			return dt
+		}
 	}
+
+	panic(fmt.Sprintf("invalid build time: %s", ts))
 }
 
 func parseVersionOrDie(tag string, sha string) string {

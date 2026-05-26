@@ -1,4 +1,4 @@
-module github.com/upsetbit/degg
+module github.com/caian-org/degg
 
 go 1.23.3
 

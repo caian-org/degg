@@ -7,10 +7,10 @@ import (
 	"os"
 
 	// internal
-	"github.com/upsetbit/degg/cmd/degg/cli"
-	"github.com/upsetbit/degg/internal/declaration"
-	"github.com/upsetbit/degg/internal/generator"
-	"github.com/upsetbit/degg/internal/system"
+	"github.com/caian-org/degg/cmd/degg/cli"
+	"github.com/caian-org/degg/internal/declaration"
+	"github.com/caian-org/degg/internal/generator"
+	"github.com/caian-org/degg/internal/system"
 )
 
 func main() {
