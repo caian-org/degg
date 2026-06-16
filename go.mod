@@ -3,7 +3,7 @@ module github.com/caian-org/degg
 go 1.26.3
 
 require (
-	github.com/urfave/cli/v3 v3.9.0
+	github.com/urfave/cli/v3 v3.10.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
